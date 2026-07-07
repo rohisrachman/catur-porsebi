@@ -203,7 +203,7 @@ export function BracketBoard({ data }: { data: TournamentData }) {
       </div>
 
       <div className="scrollbar-thin overflow-x-auto rounded-2xl border border-white/10 bg-black/25 p-4 backdrop-blur-sm">
-        <div className="relative flex w-max min-w-full items-stretch justify-start gap-5 pb-2">
+        <div id="bracket-screenshot-target" className="relative flex w-max min-w-full items-stretch justify-start gap-5 bg-[#07070b] p-4 pb-6">
           <div className="pointer-events-none absolute inset-x-4 top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-electric/5 via-royal/60 to-electric/5" />
           <div className="pointer-events-none absolute left-1/2 top-6 h-[calc(100%-3rem)] w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-royal/50 to-transparent" />
           <div className="pointer-events-none absolute left-[43.5%] top-8 hidden rounded-full border border-royal/30 bg-black/70 px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-royal xl:block">

@@ -22,6 +22,35 @@ export default function HomePage() {
     }
   }, []);
 
+  const downloadBracketScreenshot = useCallback(async () => {
+    const target = document.getElementById("bracket-screenshot-target");
+    if (!target) return;
+
+    try {
+      const { toPng } = await import("html-to-image");
+      const dataUrl = await toPng(target, {
+        cacheBust: true,
+        pixelRatio: 1,
+        backgroundColor: "#07070b",
+        canvasWidth: target.scrollWidth,
+        canvasHeight: target.scrollHeight,
+        width: target.scrollWidth,
+        height: target.scrollHeight,
+        style: {
+          transform: "none",
+          width: `${target.scrollWidth}px`,
+          height: `${target.scrollHeight}px`
+        }
+      });
+      const link = document.createElement("a");
+      link.download = `catur-porsebi-bracket-${new Date().toISOString().slice(0, 10)}.png`;
+      link.href = dataUrl;
+      link.click();
+    } catch {
+      window.alert("Gagal membuat screenshot bracket. Coba gunakan browser Chrome atau desktop.");
+    }
+  }, []);
+
   return (
     <ChessBackground>
       {actions.data ? (
@@ -30,6 +59,7 @@ export default function HomePage() {
             tournament={actions.data.tournament}
             connection={actions.connection}
             onFullscreen={toggleFullscreen}
+            onScreenshot={downloadBracketScreenshot}
             fullscreen={fullscreen}
           />
           <BracketBoard data={actions.data} />

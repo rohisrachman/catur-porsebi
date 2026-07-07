@@ -1,6 +1,6 @@
 "use client";
 
-import { Crown, Maximize2, Minimize2, Shield } from "lucide-react";
+import { Camera, Crown, Maximize2, Minimize2, Shield } from "lucide-react";
 import { LiveStatusBadge } from "./LiveStatusBadge";
 import type { ConnectionStatus, Tournament } from "@/lib/types";
 
@@ -8,12 +8,14 @@ export function TournamentHeader({
   tournament,
   connection,
   onFullscreen,
-  fullscreen
+  fullscreen,
+  onScreenshot
 }: {
   tournament: Tournament;
   connection: ConnectionStatus;
   onFullscreen?: () => void;
   fullscreen?: boolean;
+  onScreenshot?: () => void;
 }) {
   return (
     <header className="mx-auto flex w-full max-w-[1800px] flex-col gap-6 px-4 py-6 sm:px-6 lg:px-8">
@@ -24,6 +26,15 @@ export function TournamentHeader({
         </div>
         <div className="flex items-center gap-3">
           <LiveStatusBadge status={connection} />
+          {onScreenshot ? (
+            <button
+              onClick={onScreenshot}
+              className="inline-flex items-center gap-2 rounded-full border border-royal/40 bg-royal/15 px-3 py-2 text-sm font-semibold text-amber-100 transition hover:border-royal/70 hover:bg-royal/25"
+            >
+              <Camera size={16} />
+              Screenshot
+            </button>
+          ) : null}
           {onFullscreen ? (
             <button
               onClick={onFullscreen}
