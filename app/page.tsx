@@ -13,8 +13,9 @@ export default function HomePage() {
   const [fullscreen, setFullscreen] = useState(false);
 
   const toggleFullscreen = useCallback(async () => {
+    const target = document.getElementById("bracket-display-target");
     if (!document.fullscreenElement) {
-      await document.documentElement.requestFullscreen().catch(() => undefined);
+      await (target ?? document.documentElement).requestFullscreen().catch(() => undefined);
       setFullscreen(true);
     } else {
       await document.exitFullscreen().catch(() => undefined);

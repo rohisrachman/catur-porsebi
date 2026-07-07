@@ -64,3 +64,21 @@ textarea {
 .scrollbar-thin::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.04);
 }
+
+#bracket-display-target:fullscreen {
+  max-width: none;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: #07070b;
+  padding: 24px;
+}
+
+#bracket-display-target:-webkit-full-screen {
+  max-width: none;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: #07070b;
+  padding: 24px;
+}

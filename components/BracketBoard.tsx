@@ -155,7 +155,7 @@ export function BracketBoard({ data }: { data: TournamentData }) {
   const semiToFinal = [{ from: semiCenters, to: semiCenters[0] }];
 
   return (
-    <section className="mx-auto w-full max-w-[1800px] px-4 pb-10 sm:px-6 lg:px-8">
+    <section id="bracket-display-target" className="mx-auto w-full max-w-[1800px] px-4 pb-10 sm:px-6 lg:px-8">
       <div className="mb-5 grid gap-4 lg:grid-cols-[1fr_360px]">
         <div className="glass-panel rounded-xl p-5">
           <p className="text-xs font-black uppercase tracking-[0.28em] text-electric">Peraturan</p>
