@@ -9,7 +9,7 @@ export async function POST(request: Request) {
 
   const body = (await request.json().catch(() => ({}))) as { passcode?: string };
   if (!body.passcode || body.passcode !== configuredPasscode) {
-    return NextResponse.json({ ok: false, message: "Passcode admin tidak valid." }, { status: 401 });
+    return NextResponse.json({ ok: false, message: "Ehh kasian, co tanya admin" }, { status: 401 });
   }
 
   const response = NextResponse.json({ ok: true });

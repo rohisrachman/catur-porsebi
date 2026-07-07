@@ -23,7 +23,7 @@ function LoginForm() {
     });
     setLoading(false);
     if (!response.ok) {
-      setError("Passcode admin tidak valid.");
+      setError("Ehh kasian, co tanya admin");
       return;
     }
     window.location.href = params.get("next") ?? "/admin";
