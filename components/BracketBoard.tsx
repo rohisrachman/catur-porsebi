@@ -158,10 +158,28 @@ export function BracketBoard({ data }: { data: TournamentData }) {
     <section className="mx-auto w-full max-w-[1800px] px-4 pb-10 sm:px-6 lg:px-8">
       <div className="mb-5 grid gap-4 lg:grid-cols-[1fr_360px]">
         <div className="glass-panel rounded-xl p-5">
-          <p className="text-xs font-black uppercase tracking-[0.28em] text-electric">Live Tournament Board</p>
-          <p className="mt-2 max-w-3xl text-sm leading-6 text-white/58">
-            Bracket bergerak dari dua sisi menuju arena final di tengah. Setiap update admin langsung memantul ke layar publik secara realtime.
-          </p>
+          <p className="text-xs font-black uppercase tracking-[0.28em] text-electric">Peraturan</p>
+          <h2 className="mt-2 text-2xl font-black text-amber-100">Panduan Dasar Catur dgn Penggunaan Jam Catur</h2>
+          <div className="mt-4 grid gap-4 text-sm leading-6 text-white/62 lg:grid-cols-2">
+            <div>
+              <p className="font-black uppercase tracking-[0.16em] text-bone">Aturan Dasar Catur</p>
+              <ol className="mt-2 list-decimal space-y-1 pl-5">
+                <li>Tujuan permainan adalah melakukan skak mat terhadap raja lawan.</li>
+                <li>Setiap pemain memiliki 16 bidak: Raja, Ratu, Benteng, Gajah, Kuda, dan Pion.</li>
+                <li>Putih berjalan lebih dulu, lalu bergantian.</li>
+                <li>Gerakan bidak berbeda-beda sesuai jenisnya.</li>
+              </ol>
+            </div>
+            <div>
+              <p className="font-black uppercase tracking-[0.16em] text-bone">Aturan Penting</p>
+              <ol className="mt-2 list-decimal space-y-1 pl-5">
+                <li>Skak: Raja terancam.</li>
+                <li>Skak Mat: Raja tidak bisa diselamatkan.</li>
+                <li>Pat: Tidak ada langkah legal - seri.</li>
+                <li>Rokade, En Passant, dan Promosi adalah aturan khusus.</li>
+              </ol>
+            </div>
+          </div>
         </div>
         <div className="royal-frame animate-crown-pop rounded-xl bg-black/45 p-5">
           <div className="flex items-center justify-between gap-4">
